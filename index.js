@@ -5,29 +5,19 @@
  */
 
 import { argv } from "process";
-import { helpCommand } from "./src/help.js";
-
-/**
- * Constantes
- */
-
-const commands = {
-	add: 'add',
-	delete: 'delete',
-	update: 'update',
-	list: 'list',
-	help: '--help'
-}
+import { commands } from "./src/config/constants.js";
+import { helpCommand } from "./src/commands/help.js";
+import { addCommand } from "./src/commands/add.js";
 
 if (argv.length < 3)
 {
-	console.log("Error. Command required. Use \"expense_tracker --help\" for see options.");
+	console.log("Error. Command required. \nUse \"expense_tracker --help\" for see options.");
 }
 else
 {
 	switch (argv[2]) {
 		case commands.add:
-			// funcition add
+			addCommand(argv[4]);
 			break;
 		case commands.delete:
 			break;
