@@ -5,6 +5,7 @@
  */
 
 import { argv } from "process";
+import { helpCommand } from "./src/help.js";
 
 /**
  * Constantes
@@ -35,10 +36,10 @@ else
 		case commands.list:
 			break;
 		case commands.help:
+			helpCommand();
 			break;
 		default:
 			console.log("Error. Unknow command.")
-			// funcion help();
 			break;
 	}
 }
